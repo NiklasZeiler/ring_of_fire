@@ -1,0 +1,41 @@
+.start-screen {
+    background-color: #404040;
+    width: 100vw;
+    height: 100vh;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 100vh;
+    }
+
+    .label {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 70px;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 30vw;
+            height: auto;
+
+            &:hover {
+                filter: brightness(1.5);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1115px) {
+    .start-screen {
+        img {
+            width: 100vw;
+            object-fit: contain;
+        }
+    }
+}

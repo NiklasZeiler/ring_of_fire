@@ -1,0 +1,169 @@
+.field {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    background-image: url("/assets/img/board.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-stack {
+    position: relative;
+
+    img {
+        position: absolute;
+        width: 120px;
+    }
+}
+
+.top-card {
+    cursor: pointer;
+    transition: all 125ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.1) translateY(-10px);
+    }
+}
+
+.pick-card {
+    animation: pick-card-animation 1.2s ease-in-out;
+    transform: scale(1.3) translateY(-180px) translateX(140px) rotate(-10deg);
+}
+
+.played-card {
+    right: 16px;
+    transform: scale(1.3) translateY(-180px) translateX(140px) rotate(-10deg);
+}
+
+@keyframes pick-card-animation {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(1.7);
+    }
+
+    60% {
+        transform: scale(1.7);
+    }
+
+    100% {
+        transform: scale(1.3) translateY(-180px) translateX(140px) rotate(-10deg);
+    }
+}
+
+.player-position {
+    position: absolute;
+    right: 0 !important;
+    z-index: 1;
+}
+
+.btn-add {
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+}
+
+.pin-card-bottom {
+    position: absolute;
+    bottom: 32px;
+    left: 100px;
+    max-width: 300px;
+}
+
+.btn-new-game {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+}
+
+.screen-to-small {
+    display: none;
+}
+
+@media screen and (max-width: 950px) {
+    .field {
+        justify-content: flex-start;
+
+        .card-stack {
+            padding-left: 500px;
+        }
+    }
+
+    .player-position {
+        left: 0;
+    }
+
+    .pin-card-bottom {
+        bottom: 4px;
+        left: 4px;
+        right: 4px;
+        max-width: 100%;
+    }
+
+    .btn-add {
+        bottom: 190px;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .card-stack {
+        padding-left: 300px !important;
+    }
+
+    .player-position {
+        top: 0 !important;
+        display: flex;
+    }
+
+    .btn-new-game {
+        top: 47px;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .card-stack {
+        padding-left: 160px !important;
+    }
+
+    .btn-add {
+        bottom: 225px;
+    }
+}
+
+@media screen and (max-width: 365px) {
+    .card-stack {
+        img {
+            width: 90px !important;
+        }
+    }
+
+    .pick-card {
+        animation: pick-card-animation 1.2s ease-in-out;
+        transform: scale(1.3) translateY(-160px) translateX(40px) rotate(-10deg);
+    }
+
+    .played-card {
+        right: 16px;
+        transform: scale(1.3) translateY(-160px) translateX(40px) rotate(-10deg);
+    }
+
+    @keyframes pick-card-animation {
+        0% {
+            transform: scale(1);
+        }
+        40% {
+            transform: scale(1.7);
+        }
+
+        60% {
+            transform: scale(1.7);
+        }
+
+        100% {
+            transform: scale(1.3) translateY(-160px) translateX(40px) rotate(-10deg);
+        }
+    }
+}
