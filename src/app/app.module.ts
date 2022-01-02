@@ -16,6 +16,9 @@ import  {MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
     PlayerMobileComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

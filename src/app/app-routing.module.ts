@@ -5,7 +5,7 @@ import { StartComponent } from './start/start.component';
 
 const routes: Routes = [
   {path: '', component: StartComponent},
-  {path: 'game', component: GameComponent},
+  {path: 'game/:id', component: GameComponent},//alles was nach dem Doppelpunkt kommt ist eine Variable über die die Seite verfügt
 ];
 
 @NgModule({

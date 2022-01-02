@@ -22,12 +22,12 @@
         <!-- Stack for played cards -->
         <img *ngFor="let card of game.playedCards" class="played-card" src="/assets/img/cards/{{ card }}.png">
         <!-- Current card (Animtaion) -->
-        <img (click)="takeCard()" style="right: 16px" *ngIf="pickCardAnimation" [class.pick-card]="pickCardAnimation"
-            class="pick-card" src="/assets/img/cards/{{ currentCard }}.png">
+        <img (click)="takeCard()" style="right: 16px" *ngIf="game.pickCardAnimation" [class.pick-card]="game.pickCardAnimation"
+            class="pick-card" src="/assets/img/cards/{{ game.currentCard }}.png">
     </div>
 </div>
 
-<app-game-info *ngIf="!gameOver" [card]="currentCard" class="pin-card-bottom game-info"></app-game-info>
+<app-game-info *ngIf="!gameOver" [card]="game.currentCard" class="pin-card-bottom game-info"></app-game-info>
 
 <button *ngIf="!gameOver" mat-fab color="accent" (click)="openDialog()" class="btn-add">
     <mat-icon>add</mat-icon>
