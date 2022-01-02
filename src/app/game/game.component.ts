@@ -13,6 +13,7 @@ export class GameComponent implements OnInit {
   pickCardAnimation = false;
   currentCard: string = '';
   game: Game;
+  gameOver: boolean = false;
 
   constructor(public dialog: MatDialog) { }
 
@@ -27,7 +28,9 @@ export class GameComponent implements OnInit {
   }
 
   takeCard() {
-    if (this.game.players.length == 0) {
+    if (this.game.stack.length == 0) {
+      this.gameOver = true;
+    } else if (this.game.players.length == 0) {
       alert('Please add one player');
     } else if (!this.pickCardAnimation) {
       this.currentCard = this.game.stack.pop();
@@ -39,8 +42,9 @@ export class GameComponent implements OnInit {
         this.game.playedCards.push(this.currentCard);
         this.pickCardAnimation = false;
         //       // this.saveGame();
-      }, 1200)
+      }, 1200);
       //   }
+
     }
   }
 

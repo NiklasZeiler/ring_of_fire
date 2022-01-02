@@ -46,15 +46,3 @@
         border-top-right-radius: 50px;
     }
 }
-
-@media screen and (max-width: 710px) {
-    .player {
-        display: none;
-        position: absolute;
-        width: 50vw;
-    }
-
-    .player_responsive {
-        display: flex;
-    }
-}

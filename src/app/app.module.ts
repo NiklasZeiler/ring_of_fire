@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import  {MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { PlayerMobileComponent } from './player-mobile/player-mobile.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MatButtonModule } from '@angular/material/button';
     GameComponent,
     GameInfoComponent,
     PlayerComponent,
-    StartComponent
+    StartComponent,
+    PlayerMobileComponent
   ],
   imports: [
     BrowserModule,
